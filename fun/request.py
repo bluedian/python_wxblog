@@ -49,6 +49,8 @@ def updataBlogServer(url, updata):
 
     if url is None:
         url = 'http://localhost/blog/api/upblog'
+
+    print(url)
     r = requests.post(url, data=updata)
     r.encoding = r.apparent_encoding
     if (r.status_code) != 200:

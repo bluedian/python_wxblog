@@ -42,7 +42,7 @@ if __name__ == '__main__':
     #2017年11月30日更新
     for cid in urls.spiderNum:
 
-        for page in range(1, 15):
+        for page in range(1, 2):
 
             spiderAllUrl = (urls.spiderUrl % (cid, page))
             print(spiderAllUrl)

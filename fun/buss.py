@@ -25,7 +25,7 @@ def htmlToLists(htmltext):
             wxaccount = p1.find(class_="account").string
             wxaccounturl = p1.find(class_="account").get('href')
             upData = {
-                'cateid':0,
+                'cateid': 0,
                 'title': title,
                 'tag': tag,
                 'wxaccount': wxaccount,
