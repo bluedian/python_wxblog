@@ -10,10 +10,20 @@ try:
     r = requests.get(urls.jobsUrl)
     print(r.status_code)
     jobs = r.text
+    print(jobs)
     jobs_json = json.loads(jobs)
 
     jobs_id = jobs_json[0]['id']
     jobs_data = jobs_json[0]
+
+    test_url=jobs_data['contentUrl']
+    print(test_url)
+
+    r = requests.get(test_url)
+    testcontext = r.text
+    if testcontext.find('系统出错') > -1:
+        exit(0)
+
 
     print('共三步,第二步:向总服务器进行提交数据')
     r = requests.post(urls.postUrl, json=jobs_data)
