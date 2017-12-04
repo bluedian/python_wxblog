@@ -34,7 +34,6 @@ if __name__ == '__main__':
 
             spiderAllUrl = (urls.spiderUrl % (cid, page))
             print(spiderAllUrl)
-
             time.sleep(5)
             run(spiderAllUrl, cateid=cid)
 
