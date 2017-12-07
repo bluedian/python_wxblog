@@ -17,27 +17,18 @@ def run(url, cateid=1):
         exit()
 
     for linkdata in lists:
-        print('下面是连接数据')
         linkdata['cateid'] = cateid
-        print(linkdata)
-
         upstatus = request.updataBlogServer(urls.jobsUpUrl, updata=linkdata)
         print(upstatus)
 
 
 if __name__ == '__main__':
     #2017年11月30日更新
-
+    print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
     for cid in urls.spiderNum:
-        print(cid)
         for page in range(1, 10):
             spiderAllUrl = (urls.spiderUrl % (cid, page))
-            print(spiderAllUrl)
             time.sleep(5)
             run(spiderAllUrl, cateid=cid)
-
-
-
-
 
 
