@@ -24,8 +24,9 @@ for i in range(1, 10):
 
         r = requests.get(test_url)
         testcontext = r.text
-        if testcontext.find('系统出错') > -1:
-            exit(0)
+        print(r.status_code)
+        #if testcontext.find('系统出错') > 1:
+        #    exit()
 
 
         print('共三步,第二步:向总服务器进行提交数据')
