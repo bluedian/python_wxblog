@@ -8,5 +8,5 @@ jobsUpUrl = 'http://oa.9oe.com/index.php/blog/api/upblog'
 
 spiderUrl = 'http://wx.sogou.com/pcindex/pc/pc_%d/%d.html'
 
-spiderNum=[0, 1, 9, 11, 13, 14, 16]
-
+#2017-12-07 增加全部分类
+spiderNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]

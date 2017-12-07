@@ -30,8 +30,7 @@ if __name__ == '__main__':
 
     for cid in urls.spiderNum:
         print(cid)
-        for page in range(1, 5):
-
+        for page in range(1, 10):
             spiderAllUrl = (urls.spiderUrl % (cid, page))
             print(spiderAllUrl)
             time.sleep(5)
