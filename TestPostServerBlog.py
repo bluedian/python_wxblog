@@ -10,13 +10,12 @@ datas = {
 }
 
 postUrl = 'http://118.190.45.100/mm-admin/api/v1/article'
-jobsUrl = 'http://localhost/blog/api/upServer'
-jobsOKUrl = 'http://localhost/blog/api/upJobsOK'
+jobsUrl = 'http://oa.9oe.com/index.php/blog/api/upServer'
+jobsOKUrl = 'http://oa.9oe.com/index.php/blog/api/upJobsOK'
 
 r = requests.get(jobsUrl)
 
-
-jobs=r.text
+jobs = r.text
 print(jobs)
 print(type(jobs))
 print('-----------')
@@ -24,12 +23,13 @@ jobs_json = json.loads(jobs)
 print(jobs_json)
 print(type(jobs_json))
 
-jobs_id=jobs_json[0]['id']
+jobs_id = jobs_json[0]['id']
 
 print(jobs_id)
 
-datas={
+datas = {
     'type': '3',
+    'createUserId': 7,
     'contentText': jobs_json[0]['contentText'],
     'contentUrl': jobs_json[0]['contentUrl']
 }
@@ -37,26 +37,18 @@ datas={
 print(datas)
 print(type(datas))
 
-okData={
-    'id':jobs_id
+okData = {
+    'id': jobs_id
 }
 
 r_ok = requests.post(jobsOKUrl, data=okData)
 
-r_ok_text=r_ok.text
+r_ok_text = r_ok.text
 print(r_ok_text)
 print(type(r_ok_text))
 exit()
-
-
-
-
 
 rgo = requests.post(postUrl, json=datas)
 
 print(rgo.status_code)
 print(rgo.text)
-
-
-
-
